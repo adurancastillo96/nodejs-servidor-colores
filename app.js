@@ -115,7 +115,8 @@ const server = http.createServer(async (req, res) => {
         }
 
         // No variant provided -> random color
-        return sendHtml(res, `<p style="color:${getRandomColor().hex}">${getRandomColor().hex}</p>`);
+        const randomColor = getRandomColor();
+        return sendHtml(res, `<p style="color:${randomColor.hex}">${randomColor.hex}</p>`);
     }
 
     // /get-colors: clickable HTML list
